@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Articles({articles,sortByUpvotes,sortVote}) {
+function Articles({articles}) {
 //   console.log({articles});
 //    console.log(articles);
     return (

@@ -7,16 +7,15 @@ import Articles from './components/Articles';
 const title = "Sorting Articles";
 
 function App({articles}) {
-    const data = {articles};
-    const [article, setArticle] = React.useState(data);
+    const [articless, setArticles] = React.useState(articles);
 
     const sortVote = () => {
-        setArticle([...article].sort((a, b) => new Date(a.date)-new Date(b.date)));
+        setArticles([...articless].sort((a, b) => new Date(a.date)-new Date(b.date)));
         console.log('clicked');
     };
   
   const sortByUpvotes = () => {
-    setArticle([...article].sort((ab, bc) =>
+    setArticles([...articless].sort((ab, bc) =>
         ab.upvotes > bc.upvotes ? 1 : -1))
         console.log('clicked');
     };
@@ -31,7 +30,7 @@ function App({articles}) {
                 <button  data-testid="most-recent-link" className="small" 
                 onClick={sortVote}>Most Recent</button>
             </div>
-            <Articles sortVote={sortVote} sortByUpvotes={sortByUpvotes} articles={articles}/>
+            <Articles articles={articless}/>
         </div>
     );
 
